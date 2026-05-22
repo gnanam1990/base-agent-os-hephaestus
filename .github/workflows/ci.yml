@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build TypeScript packages
+        run: pnpm build
+
+      - name: Run TypeScript typecheck
+        run: pnpm typecheck
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Build Solidity contracts
+        run: forge build
+        working-directory: contracts
+
+      - name: Run Solidity tests
+        run: forge test
+        working-directory: contracts
+
+      - name: Run template tests
+        run: forge test
+        working-directory: templates

@@ -7,7 +7,31 @@
 
 ## Endpoints
 
-To be filled in after Stage 09 (or equivalent).
+| Method | Route | Price | Description |
+|--------|-------|-------|-------------|
+| POST | /api/deploy/standard | $20 | Deploy from template |
+| POST | /api/deploy/custom | $1 | Preview custom deploy |
+| POST | /api/deploy/custom/confirm | $99 | Confirm custom deploy |
+| POST | /api/deploy/deep | $5 | Preview deep audit deploy |
+| POST | /api/deploy/deep/confirm | $495 | Confirm deep audit deploy |
+| GET | /api/jobs/:id | Free | Get job status |
+| GET | /api/deploys/:addr | Free | Get on-chain deploy record |
+| GET | /api/templates | Free | List available templates |
+| POST | /api/refund/:job_id | Free | Request refund for failed job |
+| GET | /health | Free | Health check |
+
+## Quickstart
+
+```bash
+# Start the API server
+pnpm --filter @hephaestus/server dev
+
+# List templates
+curl http://localhost:3031/api/templates
+
+# Health check
+curl http://localhost:3031/health
+```
 
 ## On-chain
 
