@@ -1,0 +1,74 @@
+{
+    "templates": [
+        {
+            "name": "ERC20Mintable",
+            "path": "src/erc20-mintable/ERC20Mintable.sol",
+            "manifest": "src/erc20-mintable/manifest.json",
+            "category": "token",
+            "tags": ["erc20", "mintable", "permit"]
+        },
+        {
+            "name": "ERC721Standard",
+            "path": "src/erc721-standard/ERC721Standard.sol",
+            "manifest": "src/erc721-standard/manifest.json",
+            "category": "nft",
+            "tags": ["erc721", "nft", "uri-storage"]
+        },
+        {
+            "name": "ERC4626Vault",
+            "path": "src/erc4626-vault/ERC4626Vault.sol",
+            "manifest": "src/erc4626-vault/manifest.json",
+            "category": "defi",
+            "tags": ["erc4626", "vault", "yield"]
+        },
+        {
+            "name": "VestingLinear",
+            "path": "src/vesting-linear/VestingLinear.sol",
+            "manifest": "src/vesting-linear/manifest.json",
+            "category": "tokenomics",
+            "tags": ["vesting", "cliff", "linear"]
+        },
+        {
+            "name": "PaymentSplitter",
+            "path": "src/payment-splitter/PaymentSplitter.sol",
+            "manifest": "src/payment-splitter/manifest.json",
+            "category": "payment",
+            "tags": ["splitter", "payment", "multi-recipient"]
+        },
+        {
+            "name": "DutchAuction",
+            "path": "src/dutch-auction/DutchAuction.sol",
+            "manifest": "src/dutch-auction/manifest.json",
+            "category": "auction",
+            "tags": ["dutch", "auction", "nft"]
+        },
+        {
+            "name": "MerkleAirdrop",
+            "path": "src/merkle-airdrop/MerkleAirdrop.sol",
+            "manifest": "src/merkle-airdrop/manifest.json",
+            "category": "distribution",
+            "tags": ["merkle", "airdrop", "claim"]
+        },
+        {
+            "name": "Multisig3of5",
+            "path": "src/multisig-3of5/Multisig3of5.sol",
+            "manifest": "src/multisig-3of5/manifest.json",
+            "category": "governance",
+            "tags": ["multisig", "3of5", "governance"]
+        },
+        {
+            "name": "TimeLock",
+            "path": "src/timelock/TimeLock.sol",
+            "manifest": "src/timelock/manifest.json",
+            "category": "governance",
+            "tags": ["timelock", "vesting", "lock"]
+        },
+        {
+            "name": "NFTRoyaltySplitter",
+            "path": "src/nft-royalty-splitter/NFTRoyaltySplitter.sol",
+            "manifest": "src/nft-royalty-splitter/manifest.json",
+            "category": "royalty",
+            "tags": ["erc2981", "royalty", "splitter"]
+        }
+    ]
+}
