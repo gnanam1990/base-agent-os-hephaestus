@@ -11,7 +11,7 @@ To be filled in after Stage 09 (or equivalent).
 
 ## On-chain
 
-To be filled in after Stage 04.
+- **HephaestusRegistry** - Pending deployment (run `forge script script/Deploy.s.sol` with env vars)
 
 ## Part of the Base Agent OS
 
