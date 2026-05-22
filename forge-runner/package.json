@@ -1,0 +1,22 @@
+{
+  "name": "@hephaestus/forge-runner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@hephaestus/llm-codegen": "workspace:*",
+    "@hephaestus/core": "workspace:*",
+    "@hephaestus/eas-attest": "workspace:*",
+    "redis": "^4.7.0",
+    "ethers": "^6.13.0",
+    "execa": "^9.0.0",
+    "better-sqlite3": "^11.0.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": { "typescript": "^5.4.0", "tsx": "^4.0.0", "@types/node": "^20.0.0", "@types/better-sqlite3": "^7.6.0" }
+}
