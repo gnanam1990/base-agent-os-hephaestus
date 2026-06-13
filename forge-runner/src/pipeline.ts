@@ -144,6 +144,15 @@ export async function processJob(r: RedisClient, job: DeployJob) {
 }
 
 async function loadTemplate(hint: string): Promise<string> {
-    const templatePath = path.join(process.cwd(), '..', 'templates', 'src', hint);
+    // `hint` is attacker-controlled (template_hint from the deploy request body).
+    // Resolve it and confirm it stays inside templates/src; otherwise a value like
+    // "../../../../etc/passwd" would read arbitrary files, whose contents leak back
+    // via the compile-error status field (GET /api/jobs/:id).
+    const baseDir = path.resolve(process.cwd(), '..', 'templates', 'src');
+    const templatePath = path.resolve(baseDir, hint);
+    const rel = path.relative(baseDir, templatePath);
+    if (rel.startsWith('..') || path.isAbsolute(rel)) {
+        throw new Error('invalid template_hint');
+    }
     return await fs.readFile(templatePath, 'utf-8');
 }
